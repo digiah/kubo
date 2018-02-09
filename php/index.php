@@ -35,6 +35,10 @@ body{
 	background: #ffffff;
 }
 
+#menu {
+	min-width: 1550px;
+}
+
 .menuitem {
 	display: block;
 	float: left;

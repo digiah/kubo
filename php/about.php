@@ -30,15 +30,15 @@
 	float: left;
 }
 
-.clearit {
-	clear: both;	
-}
 .description {
 	border: 1px solid #333;
 	display: block;
 	position: relative;
 	margin-bottom: 25px;
 	padding: 15px;
+}
+.clearit {
+	clear: both;	
 }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -47,11 +47,15 @@
 
 $(document).ready(function(e) {
     initMenu();
-		$(".section").each(function(index, element) {
+	<?php if (count($_GET) > 0): ?>
+	$(".section").each(function(index, element) {
         $(this).hide();
     });
-		$("#the_work_section").show();		});
-
+	<?php if (isset($_GET["the_author"])): ?>$("#the_author_section").show();<? endif; ?>
+	<?php if (isset($_GET["the_work"])): ?>$("#the_work_section").show();<? endif; ?>
+	<?php if (isset($_GET["kyongsong"])): ?>$("#kyongsong_section").show();<? endif; ?>
+	<?php endif; ?>
+});
 </script>
 </head>
 
@@ -61,6 +65,10 @@ $(document).ready(function(e) {
 body{
 	background-size: 100%;
 	background: #ffffff;
+}
+
+#menu {
+	min-width: 1550px;
 }
 
 .menuitem {

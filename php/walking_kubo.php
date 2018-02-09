@@ -64,6 +64,10 @@ body{
 	background: #ffffff;
 }
 
+#menu {
+	min-width: 1550px;
+}
+
 .menuitem {
 	display: block;
 	float: left;
@@ -101,7 +105,9 @@ body{
 	color: #f4673d;
 }
 
-#about_submenu { display: none; }
+#about_submenu { 
+	display: none; 
+}
 
 .at { background-color: #ffe7d8; }
 
@@ -167,14 +173,6 @@ function initMenu() {
 <a href="#" onclick="switchView(1); return false;">Chosŏn bank</a>
 <div class="description"></div>
 <a href="#" onclick="switchView(2); return false;">Kyŏngsŏng Station</a><br />
-<div style="float: left;">
-<img src="images/old-map2.jpg" alt="" width="420" height="590" usemap="#Map" />
-<map name="Map" id="Map">
-  <area shape="rect" coords="273,189,390,216" href="#" onclick="switchView(0); return false;" alt="" />
-  <area shape="rect" coords="191,374,277,403" href="#" onclick="switchView(1); return false;" alt="" />
-  <area shape="rect" coords="7,504,128,534" href="#" onclick="switchView(2); return false;" alt="" />
-</map>
-</div>
 <div style="float: left; width: 420px; height: auto; padding: 5px;">
 <h1 id="title"></h1>
 <div id="description">
@@ -182,7 +180,15 @@ function initMenu() {
 <div id="passage">
 </div>
 </div>
-<div style="float: left;">
+<div style="float: left; margin-top: 50px;">
+<img src="images/old-map2.jpg" alt="" width="420" height="590" usemap="#Map" />
+<map name="Map" id="Map">
+  <area shape="rect" coords="273,189,390,216" href="#" onclick="switchView(0); return false;" alt="" />
+  <area shape="rect" coords="191,374,277,403" href="#" onclick="switchView(1); return false;" alt="" />
+  <area shape="rect" coords="7,504,128,534" href="#" onclick="switchView(2); return false;" alt="" />
+</map>
+</div>
+<div style="float: left; margin-top: 50px;">
 <iframe
 id="googlemap"
   width="420"
