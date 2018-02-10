@@ -45,7 +45,7 @@ function switchView(index) {
 
 <style>
 #description { border: 1px solid #333; margin-bottom: 10px; padding: 5px;}
-#passage { border: 1px solid #333; padding: 5px; }
+#passage { border: 1px solid #333; padding: 5px;}
 .topsection {
 	border: 1px solid #333;
 	display: block;
@@ -59,9 +59,43 @@ function switchView(index) {
 
 <body>
 <style>
-body{
+@font-face {
+	font-family: QumpellkaNo12;
+	src: url(http://dahi.manoa.hawaii.edu/kubo/fonts/Gluk\ Qumpellkano/QumpellkaNo12.otf);
+
+	font-family: AntiqueBookCover;
+	src: url(http://dahi.manoa.hawaii.edu/kubo/fonts/Antique\ Book\ Cover/antique_book_cover.otf);
+
+	font-family: HaarlemSerif;
+	src: url(http://dahi.manoa.hawaii.edu/kubo/fonts/Haarlem\ Serif/Haarlem\ Serif.ttf);
+}
+
+body {
 	background-size: 100%;
 	background: #ffffff;
+}
+
+.main {
+	float: left;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.map button {
+	float: left;
+	font-family: QumpellkaNo12;
+	font-size: 14px;
+	text-align: center;
+	border-radius: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.words {
+	width: 400px;
+	margin-left: 5px;
+	margin-right: 5px;
+	float: left;
 }
 
 #menu {
@@ -168,31 +202,29 @@ function initMenu() {
 </div>
 <div class="clearit"></div><!-- 126.98146811531177,37.57072617979719,z17     AIzaSyD3CcK8Leh33T-fXaPz-SA0HTunSfnDXT0-->
 <div class="topsection">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-<div id="map">
-<a href="#" onclick="switchView(0); return false;">Hwasin</a><br />
-<a href="#" onclick="switchView(1); return false;">Chosŏn bank</a>
+<div class="map">
+<button onclick="switchView(0); return false;">Hwasin</button>
+<button onclick="switchView(1); return false;">Chosŏn Bank</button>
+<button onclick="switchView(2); return false;">Kyŏngsŏng Station</button>
+</div>
 <div class="description"></div>
-<a href="#" onclick="switchView(2); return false;">Kyŏngsŏng Station</a><br />
-<div style="float: left; width: 420px; height: auto; padding: 5px;">
-<h1 id="title"></h1>
-<div id="description">
-</div>
-<div id="passage">
-</div>
-</div>
-<div style="float: left; margin-top: 50px;">
-<img src="images/old-map2.jpg" alt="" width="420" height="590" usemap="#Map" />
+<div class="main">
+	<div class="words">
+		<h1 id="title"></h1>
+		<div id="description"></div>
+		<div id="passage"></div>
+	</div>
+<img src="images/old-map2.jpg" alt="" width="420" height="590" margin-top="20px" usemap="#Map" />
 <map name="Map" id="Map">
   <area shape="rect" coords="273,189,390,216" href="#" onclick="switchView(0); return false;" alt="" />
   <area shape="rect" coords="191,374,277,403" href="#" onclick="switchView(1); return false;" alt="" />
   <area shape="rect" coords="7,504,128,534" href="#" onclick="switchView(2); return false;" alt="" />
 </map>
-</div>
-<div style="float: left; margin-top: 50px;">
 <iframe
 id="googlemap"
   width="420"
   height="590"
+  margin-top="20px"
   frameborder="0" style="border:0" src="" allowfullscreen>
 </iframe>
 </div>
