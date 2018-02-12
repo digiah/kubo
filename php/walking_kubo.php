@@ -44,8 +44,8 @@ function switchView(index) {
 </script>
 
 <style>
-#description { border: 1px solid #333; margin-bottom: 10px; padding: 5px;}
-#passage { border: 1px solid #333; padding: 5px;}
+#description { border: none; margin-bottom: 10px; padding: 5px;}
+#passage { border: none; padding: 5px;}
 .topsection {
 	border: 1px solid #333;
 	display: block;
@@ -78,7 +78,25 @@ body {
 .main {
 	float: left;
 	width: 100%;
-	margin-top: 10px;
+	border-width:8px;  
+    border-style:ridge;
+    border-color: #d8a386;
+    padding: 10px;
+	background-image: linear-gradient(to right, rgba(255, 236, 210, 0.7) 0%, rgba(252, 182, 159, 0.7) 100%);
+}
+
+.main iframe, img {
+	margin-top: 50px;
+}
+
+#description {
+	background-color: #ffffff;
+	padding: 10px;
+}
+
+#passage {
+	background-color: #ffffff;
+	padding: 10px;
 }
 
 .map button {
@@ -86,20 +104,28 @@ body {
 	font-family: QumpellkaNo12;
 	font-size: 14px;
 	text-align: center;
-	border-radius: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-top-style:double;
+	border-left-style:double;
+	border-right-style:double;
+	border-top-color:#d64c33;
+	border-left-color:#d64c33;
+	border-right-color:#d64c33;
+	border-top-width:6px;
+	border-left-width:5px;
+	border-right-width:5px;
 	margin-left: 5px;
 	margin-right: 5px;
+	padding: 10px 10px;
+	background-color: #fc9380;
 }
 
 .words {
 	width: 400px;
 	margin-left: 5px;
-	margin-right: 5px;
+	margin-right: 10px;
 	float: left;
-}
-
-#menu {
-	min-width: 1550px;
 }
 
 .menuitem {
@@ -122,12 +148,21 @@ body {
 	border-bottom-width:6px;
 	border-left-width:5px;
 	border-right-width:5px;
+	margin-right: 5px;
 	margin-left: 5px;
-	margin-right: 5px;	
 	text-align: center;
 	line-height: 40px;
 	cursor: pointer;
 	font-family: Playfair Display SC;
+}
+
+#title {
+	font-family: QumpellkaNo12;
+}
+
+.topsection {
+	margin-top: 10px;
+	margin-bottom: 20px;
 }
 
 .menuitem:hover {
@@ -194,7 +229,7 @@ function initMenu() {
     });
 	}
 </script>
-<div id="menu">
+<div class="menu">
 <div class="menuitem" id="about"><span id="_about">ABOUT</span><span id="about_submenu"><span class="submenuitem" id="the_author">&nbsp;The Author&nbsp;</span><span class="submenuitem" id="the_work">&nbsp;The Work&nbsp;</span><span class="submenuitem" id="kyongsong">&nbsp;The Kyongsong&nbsp;</span></span></div>
 <div class="menuitem" id="walking_kubo">WALKING KUBO</div>
 <div class="menuitem" id="holding_materials">HOLDING MATERIALS</div>
@@ -224,7 +259,6 @@ function initMenu() {
 id="googlemap"
   width="420"
   height="590"
-  margin-top="20px"
   frameborder="0" style="border:0" src="" allowfullscreen>
 </iframe>
 </div>
