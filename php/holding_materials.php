@@ -44,40 +44,52 @@ body{
 	background: #ffffff;
 }
 
-#menu {
-	min-width: 1550px;
-}
-
 .menuitem {
 	display: block;
 	float: left;
 	min-width: 20%;
 	height: 40px;
-	padding: 10px;
-	border-top-style:double;
-	border-bottom-style:double;
-	border-left-style:double;
-	border-right-style:double;
+	padding: 8px;
 	padding-top:5px;
 	padding-bottom:5px;
-	border-top-color:#e0a064;
-	border-bottom-color:#e0a064;
-	border-left-color:#e0a064;
-	border-right-color:#e0a064;
-	border-top-width:6px;
-	border-bottom-width:6px;
-	border-left-width:5px;
-	border-right-width:5px;
+	border-right: solid 2px #020000;
+	border-left: solid 2px #020000;
+	margin-right: 5px;
 	margin-left: 5px;
-	margin-right: 5px;	
+	margin-bottom: 5px;
+	margin-top: 5px;
 	text-align: center;
 	line-height: 40px;
 	cursor: pointer;
 	font-family: Playfair Display SC;
+	font-weight: bold;
 }
 
-.menuitem:hover {
-	background-color:#ffe7d8;	
+.menuitem a {
+  position: relative;
+  color: #020000;
+  text-decoration: none;
+}
+
+.menuitem a:before {
+  content:"";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.menuitem a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 .submenuitem:hover {
@@ -139,10 +151,10 @@ function initMenu() {
 	}
 </script>
 <div id="menu">
-<div class="menuitem" id="about"><span id="_about">ABOUT</span><span id="about_submenu"><span class="submenuitem" id="the_author">&nbsp;The Author&nbsp;</span><span class="submenuitem" id="the_work">&nbsp;The Work&nbsp;</span><span class="submenuitem" id="kyongsong">&nbsp;The Kyongsong&nbsp;</span></span></div>
-<div class="menuitem" id="walking_kubo">WALKING KUBO</div>
-<div class="menuitem" id="holding_materials">HOLDING MATERIALS</div>
-<div class="menuitem" id="online_resources">ONLINE RESOURCES</div>
+<div class="menuitem" id="about"><span id="_about"><a href="#">ABOUT</a></span><span id="about_submenu"><span class="submenuitem" id="the_author">&nbsp &nbsp<a href="#">The Author </a>&nbsp</span><span class="submenuitem" id="the_work">&nbsp<a href="#">The Work </a>&nbsp</span><span class="submenuitem" id="kyongsong">&nbsp<a href="#">The Kyongsong</a>&nbsp</span></span></div>
+<div class="menuitem" id="walking_kubo"><a href="#">WALKING KUBO</a></div>
+<div class="menuitem" id="holding_materials"><a href="#">HOLDING MATERIALS</a></div>
+<div class="menuitem" id="online_resources"><a href="#">ONLINE RESOURCES</a></div>
 </div>
 <div class="clearit"></div>
 <div id="container">

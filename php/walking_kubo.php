@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT|Playfair+Display+SC|Prata" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Elsie|Yeseva+One|Old+Standard+TT|Playfair+Display|Prata" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>KUBO: Walking Kubo</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -44,15 +44,30 @@ function switchView(index) {
 </script>
 
 <style>
-#description { border: none; margin-bottom: 10px; padding: 5px;}
-#passage { border: none; padding: 5px;}
+#description { 
+	border: none; 
+	margin-bottom: 10px; 
+	padding: 5px; 
+	font-family: Playfair Display;
+	font-size: 14px;
+}
+#passage { 
+	 border: none;
+	 padding: 5px;
+	 font-family: Playfair Display;
+	 font-size: 14px;
+	}
 .topsection {
-	border: 1px solid #333;
+	font-family: Playfair Display;
+	border: 1px solid #fff4ef;
+	border-radius: 5px;
+	background-color: #fff4ef;
 	display: block;
 	position: relative;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	margin-top: 10px;
-	padding: 5px;
+	padding: 15px;
+	font-size: 14px;
 }
 </style>
 </head>
@@ -71,18 +86,16 @@ function switchView(index) {
 }
 
 body {
+	border: none;
 	background-size: 100%;
-	background: #ffffff;
+	background: #39363d;
 }
 
 .main {
 	float: left;
 	width: 100%;
-	border-width:8px;  
-    border-style:ridge;
-    border-color: #d8a386;
     padding: 10px;
-	background-image: linear-gradient(to right, rgba(255, 236, 210, 0.7) 0%, rgba(252, 182, 159, 0.7) 100%);
+    background-color: #39363d;
 }
 
 .main iframe, img {
@@ -90,35 +103,28 @@ body {
 }
 
 #description {
-	background-color: #ffffff;
-	padding: 10px;
+	background-color: #fff4ef;
+	padding: 15px;
 }
 
 #passage {
-	background-color: #ffffff;
-	padding: 10px;
+	background-color: #fff4ef;
+	padding: 15px;
 }
 
 .map button {
 	float: left;
-	font-family: QumpellkaNo12;
+	font-family: 'Elsie', cursive;
 	font-size: 14px;
+	color: #f27f59;
 	text-align: center;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	border-top-style:double;
-	border-left-style:double;
-	border-right-style:double;
-	border-top-color:#d64c33;
-	border-left-color:#d64c33;
-	border-right-color:#d64c33;
-	border-top-width:6px;
-	border-left-width:5px;
-	border-right-width:5px;
-	margin-left: 5px;
-	margin-right: 5px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	border: solid 1px #fff4ef;
+	margin-left: 10px;
+	margin-right: 8px;
 	padding: 10px 10px;
-	background-color: #fc9380;
+	background-color: #fff4ef;
 }
 
 .words {
@@ -128,36 +134,63 @@ body {
 	float: left;
 }
 
-.menuitem {
-	display: block;
+.words h1 {
+	color: #f2957d;
+}
+
+.menu {
+	top: 0;
+	height: 60px;
+	width: 100%;
+	padding: 20px;
+	background-color: #ff6c4f;
+}
+
+.menu li {
+	display: inline;
 	float: left;
-	min-width: 20%;
-	height: 40px;
-	padding: 10px;
-	border-top-style:double;
-	border-bottom-style:double;
-	border-left-style:double;
-	border-right-style:double;
-	padding-top:5px;
-	padding-bottom:5px;
-	border-top-color:#e0a064;
-	border-bottom-color:#e0a064;
-	border-left-color:#e0a064;
-	border-right-color:#e0a064;
-	border-top-width:6px;
-	border-bottom-width:6px;
-	border-left-width:5px;
-	border-right-width:5px;
-	margin-right: 5px;
-	margin-left: 5px;
-	text-align: center;
-	line-height: 40px;
+}
+
+.menuitem {
+	display: inline-block;
+   	min-width: 20%;
+   	text-align: center;
+    text-decoration:none;  
 	cursor: pointer;
-	font-family: Playfair Display SC;
+	font-family: 'Elsie', cursive;
+	font-size: 20px;
+}
+
+.menuitem a {
+  position: relative;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.menuitem a:before {
+  content:"";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.menuitem a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 #title {
 	font-family: QumpellkaNo12;
+	color: #ff6c4f;
 }
 
 .topsection {
@@ -165,12 +198,11 @@ body {
 	margin-bottom: 20px;
 }
 
-.menuitem:hover {
-	background-color:#ffe7d8;	
+.submenuitem a {
+	font-size: 16px;
 }
 
 .submenuitem:hover {
-	font-weight: bold;
 	color: #f4673d;
 }
 
@@ -178,7 +210,7 @@ body {
 	display: none; 
 }
 
-.at { background-color: #ffe7d8; }
+.at { }
 
 .clearit {
 	clear: both;	
@@ -230,17 +262,19 @@ function initMenu() {
 	}
 </script>
 <div class="menu">
-<div class="menuitem" id="about"><span id="_about">ABOUT</span><span id="about_submenu"><span class="submenuitem" id="the_author">&nbsp;The Author&nbsp;</span><span class="submenuitem" id="the_work">&nbsp;The Work&nbsp;</span><span class="submenuitem" id="kyongsong">&nbsp;The Kyongsong&nbsp;</span></span></div>
-<div class="menuitem" id="walking_kubo">WALKING KUBO</div>
-<div class="menuitem" id="holding_materials">HOLDING MATERIALS</div>
-<div class="menuitem" id="online_resources">ONLINE RESOURCES</div>
+	<ul>
+		<li class="menuitem" id="about"><span id="_about"><a href="#">ABOUT</a></span><span id="about_submenu"><span class="submenuitem" id="the_author">&nbsp &nbsp<a href="#">The Author </a>&nbsp</span><span class="submenuitem" id="the_work">&nbsp<a href="#">The Work </a>&nbsp</span><span class="submenuitem" id="kyongsong">&nbsp<a href="#">The Kyongsong</a>&nbsp</span></span></li>
+		<li class="menuitem" id="walking_kubo"><a href="#">WALKING KUBO</a></li>
+		<li class="menuitem" id="holding_materials"><a href="#">HOLDING MATERIALS</a></li>
+		<li class="menuitem" id="online_resources"><a href="#">ONLINE RESOURCES</a></li>
+	</ul>
 </div>
 <div class="clearit"></div><!-- 126.98146811531177,37.57072617979719,z17     AIzaSyD3CcK8Leh33T-fXaPz-SA0HTunSfnDXT0-->
 <div class="topsection">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
 <div class="map">
-<button onclick="switchView(0); return false;">Hwasin</button>
-<button onclick="switchView(1); return false;">Chosŏn Bank</button>
-<button onclick="switchView(2); return false;">Kyŏngsŏng Station</button>
+<button onclick="switchView(0); return false;">HWASIN</button>
+<button onclick="switchView(1); return false;">CHOSŎN BANK</button>
+<button onclick="switchView(2); return false;">KYŎNGSŎNG STATION</button>
 </div>
 <div class="description"></div>
 <div class="main">
